@@ -23,7 +23,7 @@ export const Appbar: React.FC<AppbarProps> = ({
     showAddPost = false,
     isPublishEnabled = false,  // Add default value for isPublishEnabled
     onPublish,
-    showDropDown = false// Add onPublish function prop
+    // Add onPublish function prop
 }) => {
     const [searchQuery, setSearchQuery] = useRecoilState(searchQueryState);
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
