@@ -19,14 +19,19 @@ export const Auth = ({ type }: { type: 'signup' | 'signin' }) => {
     useEffect(() => {
         // Check if a token exists in localStorage
         const token = localStorage.getItem('token');
+
         if (token) {
             // If a token exists, redirect to /posts
             navigate("/posts");
-        } else{
-            // If it's the signin page and no token, redirect to signin page
-            navigate("/signin");
+        } else {
+            // No token found: Allow switching between signin and signup pages
+            if (type === "signin" && location.pathname !== "/signin") {
+                navigate("/signin");
+            } else if (type === "signup" && location.pathname !== "/signup") {
+                navigate("/signup");
+            }
         }
-    }, [navigate, type]);
+    }, [navigate, location.pathname, type]);
 
     async function sendRequest(){
         try {

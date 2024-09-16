@@ -31,7 +31,7 @@ export const Posts = () => {
     // @ts-ignore
     const { loading, posts } = usePosts();
     const [searchQuery, setSearchQuery] = useRecoilState(searchQueryState);
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(e.target.value.toLowerCase());
     };
     
