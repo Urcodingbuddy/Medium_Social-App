@@ -7,7 +7,7 @@ import axios from "axios";
 
 export const Auth = ({ type }: { type: 'signup' | 'signin' }) => {
     
-    const backendUrl = import.meta.env.VITE_MEDIUM_BACKEND; 
+    const backendUrl = import.meta.env.VITE_MEDIUM_BACKEND;
     console.log("Backend URL:", backendUrl);
     const navigate = useNavigate();
     const [postInputs, setPostInputs] = useState<Signupinput>({
@@ -53,9 +53,9 @@ export const Auth = ({ type }: { type: 'signup' | 'signin' }) => {
     return (
         <div className="h-screen flex flex-col justify-center">
             <div className="flex justify-center">
-                <div className="border-4 rounded-lg p-8 pt-18 pb-18 select-none">
+                <div className="border-4 rounded-lg select-none p-8">
                     <div className="pb-2">
-                        <div className="text-3xl font-extrabold w-86 text-center">
+                        <div className="text-3xl font-extrabold w-86 sm:w-64   text-center">
                             {type === "signup" ? "Create an Account" : " Sign-In "}
                         </div>
                         <div className="text-slate-500 text-center">
@@ -63,7 +63,7 @@ export const Auth = ({ type }: { type: 'signup' | 'signin' }) => {
                             <Link className="hover:underline text-gray-700 font-bold" to={type === "signup" ? "/signin" : "/signup"}>{type === "signup" ? "Sign in" : "Sign up"}</Link>
                         </div>
                     </div>
-                    <div className="pt-4">
+                    <div className="pt-4 pb-2">
 
                         {type === "signup" && (
                             <LebelledInput

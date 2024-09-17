@@ -47,28 +47,29 @@ export const Appbar: React.FC<AppbarProps> = ({
                 </span>
                 {showSearchBar && <SearchBar searchQuery={searchQuery} onSearch={handleSearch} />}
             </div>
-            
-            <div className="flex items-center gap-5 pl-5">
+
+            <div className="flex items-center gap-5 pr-3 pl-5 sm:gap-10 sm:pl-3">
                 {showPublish && (
                     <button
                         onClick={isPublishEnabled ? onPublish : undefined}
                         type="button"
-                        className={`flex justify-center text-white font-medium rounded-full text-sm px-5 py-2.5 text-center ${
-                            isPublishEnabled
+                        className={`flex justify-center text-white font-medium rounded-full text-sm px-5 py-2.5 text-center ${isPublishEnabled
                                 ? 'bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300'
                                 : 'bg-gray-400 cursor-not-allowed'
-                        }`}
+                            }`}
                     >
                         Publish
                     </button>
                 )}
-                
+
                 {showAddPost && (
                     <Link to={'/publish'}>
-                        <img className="cursor-pointer" src={PostAdd} alt="Add Post" />
+                        <div className='w-12 flex justify-center'>
+                            <img className="cursor-pointer w-8 md:w-5 sm:w-6 lg:w-7 " src={PostAdd} alt="Add Post" />
+                        </div>
                     </Link>
                 )}
-                
+
                 {/* Avatar with dropdown toggle */}
                 <div className="relative">
                     <div onClick={toggleDropdown} className="cursor-pointer">
@@ -85,12 +86,12 @@ export const Appbar: React.FC<AppbarProps> = ({
                                 Settings
                             </Link> */}
                             <button className="flex px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left"
-                            onClick={()=>{
-                                localStorage.removeItem("token")
-                                window.location.reload()
-                            }}
+                                onClick={() => {
+                                    localStorage.removeItem("token")
+                                    window.location.reload()
+                                }}
                             >
-                                <img src={logout} alt="" /> Logout 
+                                <img src={logout} alt="" /> Logout
                             </button>
                         </div>
                     )}
