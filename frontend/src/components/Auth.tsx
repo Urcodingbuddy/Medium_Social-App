@@ -3,10 +3,12 @@ import { Link, useNavigate } from "react-router-dom"
 import { Signupinput } from "@anshpethe/medium-common";
 import { LebelledInput } from "./LabelledInput";
 import axios from "axios";
+import medium from '../assets/medium.svg'
+
 
 
 export const Auth = ({ type }: { type: 'signup' | 'signin' }) => {
-    
+
     const backendUrl = import.meta.env.VITE_MEDIUM_BACKEND;
     console.log("Backend URL:", backendUrl);
     const navigate = useNavigate();
@@ -33,16 +35,16 @@ export const Auth = ({ type }: { type: 'signup' | 'signin' }) => {
         }
     }, [navigate, location.pathname, type]);
 
-    async function sendRequest(){
+    async function sendRequest() {
         try {
-            const res = await axios.post(`${backendUrl}/user/${type==="signin"?'signin':'signup'}`,postInputs)
+            const res = await axios.post(`${backendUrl}/user/${type === "signin" ? 'signin' : 'signup'}`, postInputs)
             const jwt = res.data.jwt;
             const name = res.data.user.name;
-            if(jwt){
+            if (jwt) {
                 localStorage.setItem('token', jwt);
-                localStorage.setItem('name',name)
+                localStorage.setItem('name', name)
                 navigate("/posts");
-            }else{
+            } else {
                 console.error('Token not found in Response')
             }
         } catch (error) {
@@ -51,8 +53,9 @@ export const Auth = ({ type }: { type: 'signup' | 'signin' }) => {
     }
 
     return (
-        <div className="h-screen flex flex-col justify-center">
-            <div className="flex justify-center">
+        <div className="h-screen flex flex-col justify-evenly items-center">
+            <img className="w-44" src={medium} alt="medium" />
+            <div className="flex justify-center flex-col">
                 <div className="border-4 rounded-lg select-none p-8">
                     <div className="pb-2">
                         <div className="text-3xl font-extrabold sm:w-64   text-center">
