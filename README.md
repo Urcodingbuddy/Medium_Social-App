@@ -62,4 +62,4 @@ Welcome to the Medium-like App for Posts! This application allows users to creat
 ## Contact
 
 For any questions or feedback, please reach out to anshpethe110@gmail.com 
-[![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)](https://github.com)
+
