@@ -1,4 +1,5 @@
 
+
  
 # Medium-like App for Posts
 
@@ -29,8 +30,7 @@ Welcome to the Medium-like App for Posts! This application allows users to creat
 
       b. Install project dependencies:
 			
-           bash
-			   `npm install`
+	        npm install
 
 4. **Set Up Environment Variables**
      a. Create a .env file in the root directory of the project.
@@ -43,7 +43,7 @@ Welcome to the Medium-like App for Posts! This application allows users to creat
 5. **Run the App Locally**
 		a. Start the development server: 
 			
-	    npm run dev
+	    		npm run dev
 
 	b. **Open your browser** and go to `http://localhost:5173` to view the app.
 			
@@ -62,4 +62,3 @@ Welcome to the Medium-like App for Posts! This application allows users to creat
 ## Contact
 
 For any questions or feedback, please reach out to anshpethe110@gmail.com 
-
