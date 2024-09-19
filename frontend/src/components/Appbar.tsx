@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { useRecoilState } from 'recoil';
 import { searchQueryState } from '../state/searchState';
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 interface AppbarProps {
     showSearchBar?: boolean;
@@ -36,6 +37,7 @@ export const Appbar: React.FC<AppbarProps> = ({
         setSearchQuery(e.target.value.toLowerCase())
     }
     const name = localStorage.getItem('name');
+    const navigate = useNavigate();
     return (
 
         <nav className="relative border-black border-b-2 flex justify-between px-5 py-3 items-center">
@@ -89,6 +91,7 @@ export const Appbar: React.FC<AppbarProps> = ({
                                 onClick={() => {
                                     localStorage.removeItem("token")
                                     window.location.reload()
+                                    navigate('/signin')
                                 }}
                             >
                                 <img src={logout} alt="" /> Logout
