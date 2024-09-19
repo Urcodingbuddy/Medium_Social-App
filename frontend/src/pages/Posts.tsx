@@ -55,7 +55,7 @@ export const Posts = () => {
                     <PostCardSkeleton/>
                     <PostCardSkeleton/>
                     <PostCardSkeleton/>
-                </>  },
+                </>  }
                     {filteredPosts.length > 0 ? (
                         filteredPosts.map((post: any) => (
                             <PostCard
